@@ -4,7 +4,7 @@ interface List {
     list: ListItem[],
     load(): void,
     save(): void,
-    clear(): void,
+    clearList(): void,
     addItem(ItemObj: ListItem): void,
     removeItem(id: string): void,
 }
@@ -34,7 +34,7 @@ export default class FullList implements List {
         localStorage.setItem("myList", JSON.stringify(this._list))
     }
 
-    clear(): void {
+    clearList(): void {
         this._list = []
         this.save()
     }
